@@ -20,7 +20,6 @@ namespace Task_1
             {
                 Console.WriteLine("The string wasn't entered");
             }
-        }
-        
-    }
-}
+        }  
+   }
+ }

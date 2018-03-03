@@ -12,41 +12,34 @@ namespace Task_1
         {
             inputString = maxSequence;
         }
-
         /// <summary>
         /// Method for counting the maximum number of identical consecutive elements in a string
         /// </summary>
-        /// <param name="str">string for processing</param>
         /// <returns> The maximum number of identical consecutive elements in a string </returns>
         public int CalculateMaxNumber()
         {
-
-            int counterOfChars = 1;
-            int maxSequence = 0;
-            for (int i = 0; i < inputString.Length - 1; i++)
+            int currentCount = 1;
+            int maxCount = currentCount;
+            for (int i = 1; i < inputString.Length; i++)
             {
-                if (inputString[i] == inputString[i + 1])
+                if (inputString[i - 1] == inputString[i])
                 {
-                    counterOfChars++;
+                    currentCount++;
                 }
                 else
                 {
-                    if (counterOfChars > maxSequence)
+                    if (currentCount > maxCount)
                     {
-                        maxSequence = counterOfChars;
+                        maxCount = currentCount;
                     }
-                    counterOfChars = 1;
+                    currentCount = 1;
                 }
             }
-            if (counterOfChars > maxSequence)
+            if (currentCount > maxCount)
             {
-                maxSequence = counterOfChars;
+                maxCount = currentCount;
             }
-            return maxSequence;
+            return maxCount;
         } 
      }
 }
-
-
-
-   
