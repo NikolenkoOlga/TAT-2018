@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D0AF0095-792D-4EB3-9CD9-6FEAF329DB68}</ProjectGuid>
+    <ProjectGuid>{44B67A47-F7FF-4C68-AE42-7057B410A268}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>task_3</RootNamespace>
-    <AssemblyName>task_3</AssemblyName>
+    <RootNamespace>task_4</RootNamespace>
+    <AssemblyName>task_4</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,9 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConverterToAnotherSystem.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="InputOutputXML.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="PrintXML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeNode.cs" />
+    <Compile Include="XmlParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
