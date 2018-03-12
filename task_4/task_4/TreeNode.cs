@@ -12,23 +12,23 @@ namespace task_4
         public List<TreeNode> children;
         public List<string> attributes;
         TreeNode parent;
-        
+
+        // current item in the tree
         public string tag;
         public string element;
 
-        public TreeNode(TreeNode parent, string tag, string element)
+        public TreeNode(TreeNode parent, string tag, string element, List<string> attributes)
         {
             this.parent = parent;
             this.tag = tag;
             this.element = element;
+            this.attributes = attributes;
             this.children = new List<TreeNode>();
-            this.attributes = new List<string>();
         }
 
-        public TreeNode AddChild(string tag, string element)
+        public TreeNode AddChild(string tag, string element, List<string> attributes)
         {
-            TreeNode nodeItem = new TreeNode(this, tag, element);
-            int index = children.IndexOf(nodeItem);
+            TreeNode nodeItem = new TreeNode(this, tag, element, attributes);
             children.Add(nodeItem);
             return nodeItem;
         }

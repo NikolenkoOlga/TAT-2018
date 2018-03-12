@@ -22,7 +22,7 @@ namespace task_4
             public ItemTypes types;
             public string tag;
             public string element;
-            public List<Tuple<string, string>> attr;
+            public List<string> attr;
         }
 
         private string fileName;
@@ -49,15 +49,28 @@ namespace task_4
             else
             {
                 result.types = ItemTypes.OpenTag;
-                
+
                 int closingBPos = s.IndexOf('>');
-                int endTag = s.Substring(startTag, closingBPos - startTag + 1).IndexOf(' ');
+                int endTag = s.IndexOf(' ', startTag, closingBPos - startTag + 1);
                 if (endTag < 0)
                 {
                     endTag = closingBPos - 1;
                 }
+                else
+                {
+                    string attrStr = s.Substring(endTag + 1, closingBPos - 1 - endTag);
+                    string[] attributes = attrStr.Split(" ".ToCharArray());
+                    if (attributes.Length > 0)
+                    {
+                        result.attr = new List<string>();
+                        foreach (string a in attributes)
+                        {
+                            result.attr.Add(a.Replace('=', '-'));
+                        }
+                    }
+                }
                 result.tag = s.Substring(startTag, endTag - startTag + 1).Trim();
-                
+
                 string rest = s.Substring(closingBPos + 1).Trim();
                 int startNextTag = rest.IndexOf('<');
                 if (startNextTag > 0)
@@ -79,7 +92,7 @@ namespace task_4
                 switch (parsedItem.types)
                 {
                     case ItemTypes.OpenTag:
-                        currentNode = currentNode.AddChild(parsedItem.tag, parsedItem.element);
+                        currentNode = currentNode.AddChild(parsedItem.tag, parsedItem.element, parsedItem.attr);
                         break;
 
                     case ItemTypes.CloseTag:

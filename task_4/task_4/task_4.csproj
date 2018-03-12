@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputOutputXML.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="PrintXML.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

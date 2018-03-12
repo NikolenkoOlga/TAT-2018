@@ -16,17 +16,31 @@ namespace task_4
         
         public void PrintChild(TreeNode node, string path)
         {
-            Console.WriteLine("{0}-{1}", path, node.tag);
-            path += "-" + node.tag;
-            if (node.element != null)
+            if (node.tag != null)
             {
-                Console.WriteLine("{0}-{1}", path, node.element);
-            }
+                if (path == "")
+                {
+                    path = node.tag;
+                }
+                else
+                {
+                    path += "-" + node.tag;
+                }
+                Console.WriteLine("{0}", path);
 
-            node.attributes.Sort();
-            for (int i = 0; i < node.attributes.Count; i++)
-            {
-                Console.WriteLine("{0}-{1}", path, node.attributes[i]);
+                if (node.element != null)
+                {
+                    Console.WriteLine("{0}-{1}", path, node.element);
+                }
+
+                if (node.attributes != null)
+                {
+                    node.attributes.Sort();
+                    for (int i = 0; i < node.attributes.Count; i++)
+                    {
+                        Console.WriteLine("{0}-{1}", path, node.attributes[i]);
+                    }
+                }
             }
 
             node.children.Sort();
