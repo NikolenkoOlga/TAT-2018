@@ -8,7 +8,6 @@ namespace task_4
     {
         static void Main(string[] args)
         {
-            // InputOutputXML inputOutputXML = new InputOutputXML(args[0]);
             TreeNode root = new TreeNode(null, null, null, null);
             XmlParser xmlParser = new XmlParser(args[0],root);
             xmlParser.Parse();

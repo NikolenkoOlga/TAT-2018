@@ -12,8 +12,7 @@ namespace task_4
         public List<TreeNode> children;
         public List<string> attributes;
         TreeNode parent;
-
-        // current item in the tree
+        
         public string tag;
         public string element;
 
