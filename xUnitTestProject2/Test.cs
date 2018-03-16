@@ -15,7 +15,7 @@ namespace xUnitTestProject2
             //act
             OutputEvenIndex inputString = new OutputEvenIndex(String.Empty);
             //assert
-            Assert.Null(inputString.DeleteAndPrintEvenIndex());
+            Assert.Null(inputString.DeleteEvenIndex());
         }
 
         [Fact]
@@ -27,7 +27,7 @@ namespace xUnitTestProject2
             //act
             OutputEvenIndex inputString = new OutputEvenIndex(str);
             //assert
-            Assert.Equal(result, inputString.DeleteAndPrintEvenIndex());
+            Assert.Equal(result, inputString.DeleteEvenIndex());
         }
 
         [Fact]
@@ -39,7 +39,7 @@ namespace xUnitTestProject2
             //act
             OutputEvenIndex inputString = new OutputEvenIndex(str);
             //assert
-            Assert.Equal(result, inputString.DeleteAndPrintEvenIndex());
+            Assert.Equal(result, inputString.DeleteEvenIndex());
         }
     }
 }

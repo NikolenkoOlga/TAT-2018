@@ -18,7 +18,7 @@ namespace Task_2
         /// <summary>
         /// This method delete and print even indices.
         /// </summary>
-        public string DeleteAndPrintEvenIndex()
+        public string DeleteEvenIndex()
         {
             StringBuilder evenIndex = new StringBuilder(inputString);           
             if (inputString.Length == 0)
