@@ -6,32 +6,34 @@ namespace Task_2
     /// <summary>
     /// This class is searching for  and outputs  symbols the original strings with even indices.
     /// </summary>
-    class OutputEvenIndex
+    public class OutputEvenIndex
     {
-        private string inputString;
-   
+        public string inputString;
+
         public OutputEvenIndex(string value)
         {
             inputString = value;
         }
-        /// <summary>
-        /// This method outputs even indices.
-        /// </summary>
-        public void FindEvenIndex()
-        {
-            StringBuilder EvenIndex = new StringBuilder(inputString);
 
+        /// <summary>
+        /// This method delete and print even indices.
+        /// </summary>
+        public string DeleteEvenIndex()
+        {
+            StringBuilder evenIndex = new StringBuilder(inputString);           
             if (inputString.Length == 0)
             {
                 Console.WriteLine("Empty string");
+                return null;
             }
 
-            for (int i = 1; i < EvenIndex.Length; i+=1)
+            for (int i = 1; i < evenIndex.Length; i += 1)
             {
-                EvenIndex.Remove(i, 1);
+                evenIndex.Remove(i, 1);
+                inputString = evenIndex.ToString();
             }
 
-            Console.WriteLine(EvenIndex);
+            return inputString;
         }
     }
 }

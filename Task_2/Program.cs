@@ -7,8 +7,9 @@ namespace Task_2
     {
         static void Main()
         {
-            OutputEvenIndex inputString = new OutputEvenIndex(Console.ReadLine());
-            inputString.FindEvenIndex();   
+            string inputString = Console.ReadLine();
+            OutputEvenIndex outputString = new OutputEvenIndex(inputString);
+            Console.WriteLine(outputString.DeleteEvenIndex());            
         }
     }
 }
